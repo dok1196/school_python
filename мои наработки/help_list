@@ -1,0 +1,78 @@
+1. Метод append() добавляет элемент в конец списка.
+
+fruits = ['apple', 'banana', 'grape']
+fruits.append('orange')
+print(fruits) # ['apple', 'banana', 'grape', 'orange']
+
+2. Метод extend() Метод extend() добавляет элементы из другого списка в конец текущего списка.
+
+fruits = ['apple', 'banana', 'grape']
+more_fruits = ['orange', 'pineapple']
+fruits.extend(more_fruits)
+print(fruits) # ['apple', 'banana', 'grape', 'orange', 'pineapple']
+
+3. Метод insert() вставляет элемент на определенную позицию в списке.
+
+fruits = ['apple', 'banana', 'grape']
+fruits.insert(2, 'orange')
+print(fruits) # ['apple', 'banana', 'orange', 'grape']
+
+4. Метод remove() удаляет первый элемент в списке, равный заданному значению.
+
+fruits = ['apple', 'banana', 'grape']
+fruits.remove('banana')
+print(fruits) # ['apple', 'grape']
+
+5. Метод pop() удаляет элемент по индексу и возвращает его.
+
+fruits = ['apple', 'banana', 'grape']
+popped_fruit = fruits.pop(1)
+print(popped_fruit) # 'banana'
+print(fruits) # ['apple', 'grape']
+
+6. Метод clear() удаляет все элементы из списка.
+
+fruits = ['apple', 'banana', 'grape']
+fruits.clear()
+print(fruits) # []
+
+7. Метод index() возвращает индекс первого элемента в списке, равного заданному значению.
+
+fruits = ['apple', 'banana', 'grape']
+print(fruits.index('banana')) # 1
+
+8. Метод count() возвращает количество элементов в списке, равных заданному значению.
+
+fruits = ['apple', 'banana', 'grape', 'apple']
+print(fruits.count('apple')) # 2
+
+9. Метод sort сортирует элементы списка.
+
+fruits = ['grape', 'apple', 'banana']
+fruits.sort()
+print(fruits) # ['apple', 'banana', 'grape']
+
+10. Метод reverse() разворачивает порядок элементов в списке.
+
+fruits = ['apple', 'banana', 'grape']
+fruits.reverse()
+print(fruits) # ['grape', 'banana', 'apple']
+
+11. Метод copy() возвращает копию списка.
+
+fruits = ['apple', 'banana', 'grape']
+fruits_copy = fruits.copy()
+print(fruits_copy) # ['apple', 'banana', 'grape']
+
+12. Slicing Выборка подмножества элементов из списка по определенному диапазону индексов.
+
+fruits = ['apple', 'banana', 'grape', 'orange', 'pineapple']
+print(fruits[0:3]) # ['apple', 'banana', 'grape']
+
+13. List comprehension
+Создание нового списка из элементов другого списка с помощью выражений,
+ что дает возможность быстро создавать список из другого списка без использования цикла.
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [num**2 for num in numbers]
+print(squared_numbers) # [1, 4, 9, 16, 25]
