@@ -67,3 +67,4 @@ d_min = min(l1, l2, l3)
 d_max = max(l1, l2, l3)
 res = d[d_min:d_max+1]
 print(res)
+
