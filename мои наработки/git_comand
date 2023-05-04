@@ -1,0 +1,19 @@
+1. `git clone <url>`- создает копию репозитория на вашем локальном компьютере. Пример: `git clone https://github.com/user/repository.git`
+
+2. `git init` - создает новый локальный репозиторий. Пример: `git init`
+
+3. `git add <file>` - добавляет измененные файлы в область подготовки (staging area). Пример: `git add index.html`
+
+4. `git commit -m "message"` - фиксирует изменения и создает новую версию репозитория. Пример: `git commit -m "Добавлено новое меню"`
+
+5. `git push` - загружает изменения в удаленный репозиторий. Пример: `git push origin main`
+
+6. `git pull` - получает изменения из удаленного репозитория и объединяет с вашей локальной копией. Пример: `git pull origin main`
+
+7. `git branch` - показывает список локальных веток. Пример: `git branch`
+
+8. `git checkout <branch>` - переключает ветку. Пример: `git checkout feature_branch`
+
+9. `git merge <branch>` - объединяет изменения из другой ветки в текущую. Пример: `git merge development`
+
+10. `git status` - показывает текущее состояние репозитория. Пример: `git status`
