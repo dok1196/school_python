@@ -5,11 +5,15 @@
 # Например 1, 1, 1 --> "Равносторонний"
 
 def which_triangle(a, b, c):
-    # Здесь нужно написать код
-    return type_triangle
-
-# Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
-
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "Не треугольник"
+    else:
+        if a == b and b == c:
+            return "Равносторонний"
+        elif a == b or b == c or a == c:
+            return "Равнобедренный"
+        else:
+            return "Обычный"
 
 data = [
     (3, 3, 3),
@@ -18,6 +22,9 @@ data = [
     (1, 2, 1),
     (1, 2, 3)
 ]
+
+for a, b, c in data:
+    print(f"({a}, {b}, {c}) - {which_triangle(a, b, c)}")
 
 test_data = [
     "Равносторонний", "Равнобедренный", "Обычный", "Равнобедренный", "Не треугольник"
