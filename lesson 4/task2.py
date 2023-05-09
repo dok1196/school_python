@@ -5,16 +5,13 @@
 # [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]] -->  [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
+# Здесь нужно написать код
 def flatten_and_sort(array):
-    # Здесь нужно написать код
     result_list = []
     for sub_list in array:
         result_list += sub_list
-        result_list.sort()
-        return result_list
+    result_list.sort()
     return result_list
-
-# Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
 data = [
@@ -27,8 +24,7 @@ data = [
 test_data = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9], [], [1], [1, 2, 3, 4, 5, 6, 100]
 ]
-for array in data:
-    print(flatten_and_sort(array))
+
 
 for i, d in enumerate(data):
     assert flatten_and_sort(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
