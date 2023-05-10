@@ -5,6 +5,9 @@
 
 def create_phone_number(num_tuple):
     # Здесь нужно написать код
+    num_str = ''.join(map(str, num_tuple))
+    # форматируем строку номера телефона
+    str_phone = '({}{}{}) {}{}{}-{}{}{}{}'.format(*num_str)
     return str_phone
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

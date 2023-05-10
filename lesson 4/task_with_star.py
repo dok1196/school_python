@@ -12,8 +12,35 @@
 # 4974 --> 7974
 
 def max_division_by_3(num):
-    # Здесь нужно написать код
-    return new_num
+    num_str = str(num)
+    length = len(num_str)
+    if length == 1:
+        return -1  # нет решения
+    if num % 3 == 0:
+        max_num = num
+        for i in range(length):
+            for j in range(0, 10):
+                new_num_str = num_str[:i] + str(j) + num_str[i+1:]
+                new_num = int(new_num_str)
+                if new_num % 3 == 0:
+                    max_num = max(max_num, new_num)
+        return max_num
+    else:
+        half_length = (length + 1) // 2
+        first_half = int(num_str[:half_length])
+        second_half = int(num_str[half_length:])
+        if second_half % 3 == 0:
+            return num # можно сразу вернуть исходное число
+        else: max_num = num
+            for i in range(half_length, length):
+                for j in range(0, 10):
+                    if j % 3 == 0:
+                        new_second_half_str = str(second_half)[:i-half_length] + str(j) + str(second_half)[i-half_length+1:]
+                        new_num_str = str(first_half) + new_second_half_str
+                        new_num = int(new_num_str)
+                        if new_num % 3 == 0:
+                            max_num = max(max_num, new_num)
+            return max_num
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
