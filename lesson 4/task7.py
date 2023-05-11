@@ -5,6 +5,7 @@
 def move_zeros(lst):
     left, right = 0, len(lst) - 1
     if 0 not in lst:
+        # в списке нет нулей
         return lst
     while left < right:
         while lst[right] == 0 and left < right:
