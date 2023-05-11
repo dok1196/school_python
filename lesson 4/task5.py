@@ -26,6 +26,7 @@ def josephus_task(num_people, kill_num):
         survivor.pop(pos)
     # возвращаем конечный результат - последнего выжившего воина
     return survivor[0]
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
