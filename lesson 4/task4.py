@@ -8,7 +8,6 @@
 # 4 --> 0 (4 уже одна цифра, а значит мы проделали 0 итераций)
 
 def multiplication_chain(num):
-    # Здесь нужно написать код
     count_multy = 0
     while num >= 10:
         product = 1
