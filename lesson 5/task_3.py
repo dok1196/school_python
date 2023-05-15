@@ -34,6 +34,7 @@ def everything_for_your_cat(cats_data):
     return print(our_str.strip())
 
 
+
 data = [
     [('Мартин', 5, 'Алексей', 'Егоров'),
     ('Фродо', 3, 'Анна', 'Самохина'),
