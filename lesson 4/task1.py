@@ -8,13 +8,12 @@
 def which_triangle(a, b, c):
     if a + b <= c or a + c <= b or b + c <= a:
         return "Не треугольник"
+    elif a == b and b == c:
+        return "Равносторонний"
+    elif a == b or b == c or a == c:
+        return "Равнобедренный"
     else:
-        if a == b and b == c:
-            return "Равносторонний"
-        elif a == b or b == c or a == c:
-            return "Равнобедренный"
-        else:
-            return "Обычный"
+        return "Обычный"
 
 
 data = [
