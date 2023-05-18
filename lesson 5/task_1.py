@@ -5,7 +5,6 @@
 # Например (Ввод --> Вывод) :
 # 'letter' --> {'l': 1, 'e': 2, 't': 2, 'r': 1}
 
-
 def letter_stat(our_str):
     letters_dict = {}
     for c in our_str:
