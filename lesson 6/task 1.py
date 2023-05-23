@@ -12,15 +12,8 @@ string = 'Hello'
 
 
 def global_changes():
-    global number
-    number = 5
-    global string
-    string = 'Hello, dear friend'
-    return number, string
+    # Здесь нужно написать код
 
-global_changes()
-print(number)
-print(string)
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
