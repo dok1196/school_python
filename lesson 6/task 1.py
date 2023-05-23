@@ -18,6 +18,10 @@ def global_changes():
     string = 'Hello, dear friend'
     return number, string
 
+global_changes()
+print(number)
+print(string)
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 assert number == 5, 'Переменная number должна иметь значение 5'
