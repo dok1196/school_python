@@ -4,6 +4,7 @@
 # global_function должна содержать в себе функцию local_function
 # local_function должна изменить значение переменной msg на значение 2
 
+
 def global_function():
     msg = 1
 
