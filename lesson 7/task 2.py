@@ -20,7 +20,6 @@
 # PersonInfo('Александр Шленский', 32, 'Разработка', 'УК', 'Автотесты').new_salary() --> 385056 т.к.
 # т.к. буква "т" встречается 4 раза, "а" 3 раза, 'о' 2 раза, остальные по одной. Сумма трёх самых частых букв 4+3+2 = 9.
 # 1337*32*9 = 385056
-
 # Здесь пишем код
 class PersonInfo:
 
@@ -44,10 +43,7 @@ class PersonInfo:
         three_liter = sorted(liter_count, key=liter_count.get, reverse=True)[:3]
         return 1337 * self.age * sum(liter_count.get(letter, 0) for letter in three_liter)
 
-
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
-
-
 # first_person = PersonInfo('Александр Шленский', 32, 'Разработка', 'УК', 'Автотесты')
 first_person = PersonInfo('Александр Шленский', 32, 'Разработка', 'УК', 'Автотесты')
 fourth_person = PersonInfo('Иван Иванов', 26, 'Разработка')
