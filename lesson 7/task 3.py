@@ -87,17 +87,17 @@ assert first_tram.how_long == 1.25, 'В классе Tram, how_long неверн
 assert isinstance(type(second_bus).park, property), 'В классе Bus, park - не свойство класса'
 try:
     second_bus.park = 999
-    raise ValueError('Проверка на ограничение диапазона НЕ пройдена')
+    raise AssertionError('Проверка на ограничение диапазона НЕ пройдена')
 except Exception:
     print('Проверка на правильность диапазона пройдена')
 try:
     second_bus.park = 1234
     print('Проверка на правильность диапазона пройдена')
-except ValueError:
+except AssertionError:
     raise Exception('Проверка на ограничение диапазона НЕ пройдена')
 try:
     second_bus.park = 10000
-    raise ValueError('Проверка на ограничение диапазона НЕ пройдена')
+    raise AssertionError('Проверка на ограничение диапазона НЕ пройдена')
 except Exception:
     print('Проверка на правильность диапазона пройдена')
 print('Всё ок')
