@@ -54,7 +54,7 @@ class Bus(PublicTransport):
         if 1000 <= value <= 9999:
             self.__park = value
         else:
-            raise Exception("Номер парка должен быть в диапазоне от 1000 до 9999")
+            raise AssertionError("Номер парка должен быть в диапазоне от 1000 до 9999")
 
 class Tram(PublicTransport):
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
@@ -86,8 +86,8 @@ assert first_tram.how_long == 1.25, 'В классе Tram, how_long неверн
 assert isinstance(type(second_bus).park, property), 'В классе Bus, park - не свойство класса'
 try:
     second_bus.park = 999
-    raise AssertionError('Проверка на ограничение диапазона НЕ пройдена')
-except Exception:
+    raise Exception('Проверка на ограничение диапазона НЕ пройдена')
+except AssertionError:
     print('Проверка на правильность диапазона пройдена')
 try:
     second_bus.park = 1234
@@ -96,7 +96,7 @@ except AssertionError:
     raise Exception('Проверка на ограничение диапазона НЕ пройдена')
 try:
     second_bus.park = 10000
-    raise AssertionError('Проверка на ограничение диапазона НЕ пройдена')
-except Exception:
+    raise Exception('Проверка на ограничение диапазона НЕ пройдена')
+except AssertionError:
     print('Проверка на правильность диапазона пройдена')
 print('Всё ок')
