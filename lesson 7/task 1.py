@@ -8,7 +8,6 @@
 # Segment((2, 3), (4, 5)).length() --> 2.83
 # Segment((-2, -3), (4, 5)).x_axis_intersection() --> True
 # Segment((-2, -3), (-4, -5)).y_axis_intersection() --> False
-
 # Здесь пишем код
 import math
 
@@ -29,8 +28,6 @@ class Segment:
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
-
-
 data = [Segment((2, 3), (4, 5)).length,
         Segment((1, 1), (1, 8)).length,
         Segment((0, 0), (0, 1)).length,

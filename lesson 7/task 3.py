@@ -69,7 +69,6 @@ class Tram(PublicTransport):
         return self.max_speed / (4 * self.path)
 
 
-
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 transport = PublicTransport('Автомобиль', 500, 2040, 'Фиолетовый', 300)
 first_bus = Bus('ЛиАЗ', 210, 2015, 'Зеленый', 100, 70, 1232, 32)
@@ -88,17 +87,17 @@ assert first_tram.how_long == 1.25, 'В классе Tram, how_long неверн
 assert isinstance(type(second_bus).park, property), 'В классе Bus, park - не свойство класса'
 try:
     second_bus.park = 999
-    raise Exception('Проверка на ограничение диапазона НЕ пройдена')
+    raise ValueError('Проверка на ограничение диапазона НЕ пройдена')
 except Exception:
     print('Проверка на правильность диапазона пройдена')
 try:
     second_bus.park = 1234
     print('Проверка на правильность диапазона пройдена')
-except Exception:
+except ValueError:
     raise Exception('Проверка на ограничение диапазона НЕ пройдена')
 try:
     second_bus.park = 10000
-    raise Exception('Проверка на ограничение диапазона НЕ пройдена')
+    raise ValueError('Проверка на ограничение диапазона НЕ пройдена')
 except Exception:
     print('Проверка на правильность диапазона пройдена')
 print('Всё ок')
