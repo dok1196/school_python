@@ -56,7 +56,6 @@ class Bus(PublicTransport):
         else:
             raise AssertionError("Номер парка должен быть в диапазоне от 1000 до 9999")
 
-
 class Tram(PublicTransport):
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
         super().__init__(brand, engine_power, year, color, max_speed)
