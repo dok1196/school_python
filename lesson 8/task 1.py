@@ -1,15 +1,11 @@
 # Напишите функцию treatment_sum, использовав конструкцию try/except
 # На вход поступает кортеж our_tuple
-
 # Если в кортеже 2 элемента и их можно сложить,
 # то функция возвращает получившийся результат
-
 # Если в кортеже 2 элемента и их нельзя сложить,
 # то функция обрабатывает исключение и возвращает строку 'Нельзя сложить эти данные'
-
 # Если в кортеже меньше двух элементов,
 # то функция обрабатывает исключение и возвращает строку 'Недостаточно данных'
-
 # Если в кортеже больше двух элементов,
 # то функция генерирует исключение Exception с текстом 'Много данных'
 
@@ -17,8 +13,6 @@
 import unittest  # Не удалять
 
 # Здесь пишем код
-
-
 def treatment_sum(our_tuple):
     try:
         if len(our_tuple) < 2:
@@ -27,13 +21,14 @@ def treatment_sum(our_tuple):
             raise Exception('Много данных')
         elif isinstance(our_tuple[0], (int, float)) and isinstance(our_tuple[1], (int, float)):
             return our_tuple[0] + our_tuple[1]
+        elif isinstance(our_tuple[0], str) and isinstance(our_tuple[1], str):
+            return our_tuple[0] + our_tuple[1]
         else:
             raise Exception('Нельзя сложить эти данные')
-    except Exception as e:
-        return str(e)
+    except Exception as end:
+        return str(end)
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
-
 
 class MyTestCase(unittest.TestCase):
 
