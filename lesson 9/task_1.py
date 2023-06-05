@@ -4,7 +4,11 @@
 
 
 # Здесь пишем код
-
+with open("test_file/task1_data.txt", 'r', encoding='utf-8') as file1:
+    with open("test_file/task1_answer.txt", 'w', encoding='utf-8') as file2:
+        for line in file1:
+            new_line = ''.join([char for char in line if not char.isdigit()])
+            file2.write(new_line)
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
