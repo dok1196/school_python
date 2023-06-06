@@ -18,4 +18,3 @@ with open('test_file/task_3.txt') as f:
         prices.append(sum(current_group))
 three_most_expensive_purchases = int(sum(sorted(prices, reverse=True)[:3]))
 assert three_most_expensive_purchases == 202346
-
