@@ -11,9 +11,6 @@ def all_division(*arg1):
         division /= i
     return division
 
-@pytest.mark.parametrize('a, b, result', [
-    pytest.param(), marks=pytest.mark.smoke),
-    pytest.param((), marks=pytest.mark.skip('bad')), ()
-]
+
 
 
