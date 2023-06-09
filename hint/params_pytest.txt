@@ -1,0 +1,26 @@
+[pytest]
+@pytest.mark  фабрика декораторов
+
+@pytest.mark.skip - скип теста
+@pytest.mark.skipif - скип теста с условием
+@pytest.mark.usefixture - использование фикстуры
+@pytest.mark.parametrize - параметризация текста
+
+создание файла pytest.ini с параметрами для теста, где указываем маркеры и другие парам-ы
+norecursedirs = *sub_test  исключение папок из поиска
+python_files = test*.py check*.py
+markers =
+    smoke: basic tests
+    acceptance
+    id_check  (передает id тестов для запуска)
+запуск теста с маркером  pytest -m smoke(маркер)
+
+
+
+Способы запуска тестов:
+pytest / python -m pytest pytest.main()
+pytest название_файла1 название_файла2
+pytest название_папки
+pytest -k "test_name or not test_other"
+pytest node_id (test.py::test_func/ test.py::Test::test_method)
+все тесты запускаются последовательно в 1 процессе
