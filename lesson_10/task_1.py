@@ -28,8 +28,9 @@ def generate_random_name():
     """
     a_b_c = list('abcdefghijklmnopqrstuvwxyz')
     while True:
-        name = ' '.join([''.join(random.choices(a_b_c, k=random.randint(1, 15))) for _ in range(2)])
-        yield name
+        name1 = ''.join(random.choice(a_b_c) for i in range(random.randint(1, 15)))
+        name2 = ''.join(random.choice(a_b_c) for i in range(random.randint(1, 15)))
+        yield f"{name1} {name2}"
 
 
 gen = generate_random_name()

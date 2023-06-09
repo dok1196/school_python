@@ -16,24 +16,25 @@ def all_division(*arg1):
         division /= i
     return division
 
-@pytest.mark.acceptance
+@pytest.mark.smoke
+def test_division_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        all_division(4, 0, 2)
+
+
+@pytest.mark.smoke
 def test1():
-    assert all_division(10, 2, 5) == 1.0
+    assert all_division(10, 2) == 5, 'Неверный результат деления двух чисел'
 
-
+@pytest.mark.acceptance
 def test2():
-    assert all_division(100, 10, 2, 5) == 1.0
+    assert all_division(100, 10, 2, 5) == 1, 'Неверный результат деления трех чисел'
 
 @pytest.mark.acceptance
 def test3():
-    assert all_division(1, 1, 1, 1, 1) == 1.0
+    assert all_division(1, 1, 1, 1, 1) == 1.0, 'Неверный результат деления числа на самого себя'
 
 
-@pytest.mark.smoke
-def test4():
-    assert all_division(10, 2, 0) == float('inf')
-
-@pytest.mark.smoke
 @pytest.mark.acceptance
-def test5():
-    assert all_division(0, 10, 2) == 0.0
+def test4():
+    assert all_division(-30, 2) == -15, 'Неверный результат деления отрицательного числа на положительное число'
