@@ -11,9 +11,11 @@ def all_division(*arg1):
         division /= i
     return division
 
-@pytest.mark.parametrize('a, b, result', [
-    pytest.param(), marks=pytest.mark.smoke),
-    pytest.param((), marks=pytest.mark.skip('bad')), ()
-]
-
-
+@pytest.mark.parametrize('args, expected_result', [
+    pytest.param((10, 2), 5),
+    pytest.param((100, 10, 2, 5), 1),
+    pytest.param((1, 1, 1, 1, 1), 1.0, marks=pytest.mark.smoke),
+    pytest.param((-30, 2), -15, marks=pytest.mark.skip(reason='division by negative number')),
+])
+def test_all_division(args, expected_result):
+    assert all_division(*args) == expected_result
