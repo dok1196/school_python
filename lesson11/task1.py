@@ -12,10 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-
 # Прячем длинные названия путей Xpath
-class Locator:
-    news_block = '//*[@id="container"]/div[1]/div/div[5]/div/div/div[1]/div/p[1]'
 
 
 # Открываем сайт sbis.ru
