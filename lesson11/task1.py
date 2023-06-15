@@ -15,6 +15,7 @@ from time import sleep
 
 # Прячем длинные названия путей Xpath
 class Locator:
+    tensor_ban = '//*[@id="contacts_clients"]/div[1]/div/div/div[2]/div/a'
     news_block = '//*[@id="container"]/div[1]/div/div[5]/div/div/div[1]/div/p[1]'
 
 
@@ -31,7 +32,8 @@ try:
     sleep(2)
     assert driver.find_element(By.CLASS_NAME, "sbisru-h2"), 'Открыта страница не "Контакты"'
     # Находим баннер Тензор и кликаем на него
-    banner = driver.find_element(By.XPATH, '//*[@title="tensor.ru"]')
+    banner = driver.find_element(By.XPATH, Locator.tensor_ban)
+    # banner = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@title='Тензор']")))
     banner.click()
     sleep(7)
     # Переключаемся на новую вкладку и проверяем, что находимся на сайте tensor.ru
@@ -40,7 +42,8 @@ try:
     # Находим блок новости "Сила в людях"
     element = driver.find_element(By.CLASS_NAME, 'tensor_ru-Index__block4-bg')
     driver.execute_script("arguments[0].scrollIntoView();", element)
-    news = driver.find_element(By.XPATH, '//*[contains(text(), "Нас 7 000 человек, мы — разные: ")]')
+    news = driver.find_element(By.XPATH, Locator.news_block)
+    # news = browser.find_element(By.CLASS_NAME, 'Сила в людях')
     assert news.is_displayed(),    'Блок новости "Сила в людях" не отображается'
     sleep(4)
     # Находим ссылку "Подробнее" в блоке новости "Сила в людях" и кликаем на нее
