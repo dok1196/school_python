@@ -12,8 +12,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-# Прячем длинные названия путей Xpath
-
 
 # Открываем сайт sbis.ru
 driver = webdriver.Chrome()
