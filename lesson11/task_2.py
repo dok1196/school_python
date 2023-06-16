@@ -18,6 +18,7 @@ driver.maximize_window()
 sleep(2)
 sbis_site = 'https://fix-online.sbis.ru/'
 contact_page = 'https://fix-online.sbis.ru/page/dialogs'
+msg_txt = 'Это написано автотестом'
 try:
     # Метод get сообщает браузеру, что нужно открыть сайт по указанной ссылке
     driver.get(sbis_site)
@@ -53,7 +54,7 @@ try:
     sleep(2)
     message_txt = driver.find_element(By.CSS_SELECTOR, '.textEditor_Viewer__Paragraph')
     assert message_txt.is_displayed()
-    message_txt.send_keys('Тестовое сообщение')
+    message_txt.send_keys('Это написано автотестом')
     sleep(3)
     send_btn = driver.find_element(By.CSS_SELECTOR, '.icon-BtArrow')
     assert send_btn.is_displayed()
@@ -62,7 +63,6 @@ try:
     # Поиск отправленного сообщения в реестре. Проверка сообщения по отправленному тексту. Удаление сообщения
     seng_msg = driver.find_elements(By.CSS_SELECTOR, ' .msg-dialogs-item__message-text')
     last_msg = seng_msg[0]
-    msg_txt = 'Тестовое сообщение'
     assert last_msg.text == msg_txt
     action = ActionChains(driver)
     action.move_to_element(last_msg).perform()
@@ -73,8 +73,6 @@ try:
     sleep(8)
     # Проверка отсутствия удаленного сообщения в реестре
     another_msg = driver.find_elements(By.CSS_SELECTOR, '.msg-dialogs-item__message-text')
-    find_del_msg = another_msg
-    del_msg_txt = 'Текст сообщения'
-    assert find_del_msg != del_msg_txt
+    assert another_msg != msg_txt
 finally:
     driver.quit()
